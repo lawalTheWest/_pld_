@@ -49,6 +49,6 @@ ssize_t _getline(char **linePtr, size_t *buff_size, FILE *my_file)
 
 		index++;
 	}/* end while  */
-
 	return bytes_read;
+	/* free(newSizePtr); */
 } /* END FUNCTION */
