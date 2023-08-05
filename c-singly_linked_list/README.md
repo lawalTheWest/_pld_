@@ -37,7 +37,7 @@ void insertAtBeginning(struct Node** head, int data)
     struct Node* newNode = createNode(data);
     newNode->next_node = *head;
     *head = newNode;
-}
+} /* end function */
 ```
 
    c. **Insert a new Node at the end of the list:**
@@ -50,15 +50,15 @@ void insertAtEnd(struct Node** head, int data)
 	{
         	*head = newNode;
         	return;
-    	}
+    	} /* end if */
 
 	struct Node* current = *head;
 	while (current->next_node != NULL)
 	{
 		current = current->next_node;
-    	}
+    	} /* end while */
 	current->next_node = newNode;
-}
+} /* end function */
 ```
 
    d. **Delete a Node from the list:**
@@ -73,23 +73,23 @@ void deleteNode(struct Node** head, int key)
         	*head = temp->next_node;
         	free(temp);
         	return;
-    	}
+    	} /* end if */
 
     	while (temp != NULL && temp->data != key)
 	{
         	prev = temp;
         	temp = temp->next_node;
-    	}
+    	} /* end if */
 
     	if (temp == NULL)
 	{
         	printf("Key not found in the list.\n");
         	return;
-    	}
+    	} /* end if */
 
     	prev->next_node = temp->next_node;
     	free(temp);
-}
+} /* end function */
 ```
 
    e. **Display the linked list:**
@@ -103,7 +103,7 @@ void displayList(struct Node* head)
         	current = current->next_node;
     	}
     	printf("NULL\n");
-}
+} /* end function */
 ```
 
 3. Test your functions in the main function:
@@ -125,8 +125,8 @@ int main(void)
 
     	displayList(head);
 
-    	return 0;
-}
+    	return (0);
+} /* end function */
 ```
 
 Remember to include the necessary header files like `stdio.h` and `stdlib.h` for using `printf`, `scanf`, and `malloc`.
