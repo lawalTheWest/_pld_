@@ -8,8 +8,8 @@ A singly linked list is a fundamental data structure in computer programming. It
 
 struct Node
 {
-    int data;
-    struct Node* next;
+	int data;
+    	struct Node* next_node;
 }; /* end structure */
 
 ```
@@ -22,11 +22,11 @@ struct Node
 
 struct Node* createNode(int data)
 {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    newNode->data = data;
-    newNode->next = NULL;
-    return newNode;
-}
+    	struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    	newNode->data = data;
+    	newNode->next_node = NULL;
+    	return newNode;
+} /* end function */
 
 ```
 
@@ -35,7 +35,7 @@ struct Node* createNode(int data)
 void insertAtBeginning(struct Node** head, int data)
 {
     struct Node* newNode = createNode(data);
-    newNode->next = *head;
+    newNode->next_node = *head;
     *head = newNode;
 }
 ```
@@ -53,11 +53,11 @@ void insertAtEnd(struct Node** head, int data)
     	}
 
 	struct Node* current = *head;
-	while (current->next != NULL)
+	while (current->next_node != NULL)
 	{
-		current = current->next;
+		current = current->next_node;
     	}
-	current->next = newNode;
+	current->next_node = newNode;
 }
 ```
 
@@ -70,7 +70,7 @@ void deleteNode(struct Node** head, int key)
 
 	if (temp != NULL && temp->data == key)
 	{
-        	*head = temp->next;
+        	*head = temp->next_node;
         	free(temp);
         	return;
     	}
@@ -78,7 +78,7 @@ void deleteNode(struct Node** head, int key)
     	while (temp != NULL && temp->data != key)
 	{
         	prev = temp;
-        	temp = temp->next;
+        	temp = temp->next_node;
     	}
 
     	if (temp == NULL)
@@ -87,7 +87,7 @@ void deleteNode(struct Node** head, int key)
         	return;
     	}
 
-    	prev->next = temp->next;
+    	prev->next_node = temp->next_node;
     	free(temp);
 }
 ```
@@ -100,7 +100,7 @@ void displayList(struct Node* head)
 	while (current != NULL)
 	{
         	printf("%d -> ", current->data);
-        	current = current->next;
+        	current = current->next_node;
     	}
     	printf("NULL\n");
 }
