@@ -7,12 +7,6 @@
 
 /* creating a node */
 
-struct node
-{
-	int data;
-	struct node *next_node_address;
-}; /* end struct */
-
 int main(void)
 {
 	struct node *head = (struct node *)malloc(sizeof(struct node));
