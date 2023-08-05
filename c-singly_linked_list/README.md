@@ -128,7 +128,7 @@ int main(void)
     	return (0);
 } /* end function */
 ```
-
+******************************************************************
 Remember to include the necessary header files like `stdio.h` and `stdlib.h` for using `printf`, `scanf`, and `malloc`.
 
 This is just a basic implementation of a singly linked list. There are many other operations and optimizations you can do with linked lists.
