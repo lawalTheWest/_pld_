@@ -32,7 +32,8 @@ struct Node* createNode(int data)
 
    b. **Insert a new Node at the beginning of the list:**
 ```c
-void insertAtBeginning(struct Node** head, int data) {
+void insertAtBeginning(struct Node** head, int data)
+{
     struct Node* newNode = createNode(data);
     newNode->next = *head;
     *head = newNode;
@@ -41,83 +42,93 @@ void insertAtBeginning(struct Node** head, int data) {
 
    c. **Insert a new Node at the end of the list:**
 ```c
-void insertAtEnd(struct Node** head, int data) {
-    struct Node* newNode = createNode(data);
+void insertAtEnd(struct Node** head, int data)
+{
+	struct Node* newNode = createNode(data);
 
-    if (*head == NULL) {
-        *head = newNode;
-        return;
-    }
+	if (*head == NULL)
+	{
+        	*head = newNode;
+        	return;
+    	}
 
-    struct Node* current = *head;
-    while (current->next != NULL) {
-        current = current->next;
-    }
-    current->next = newNode;
+	struct Node* current = *head;
+	while (current->next != NULL)
+	{
+		current = current->next;
+    	}
+	current->next = newNode;
 }
 ```
 
    d. **Delete a Node from the list:**
 ```c
-void deleteNode(struct Node** head, int key) {
-    struct Node* temp = *head;
-    struct Node* prev = NULL;
+void deleteNode(struct Node** head, int key)
+{
+	struct Node* temp = *head;
+	struct Node* prev = NULL;
 
-    if (temp != NULL && temp->data == key) {
-        *head = temp->next;
-        free(temp);
-        return;
-    }
+	if (temp != NULL && temp->data == key)
+	{
+        	*head = temp->next;
+        	free(temp);
+        	return;
+    	}
 
-    while (temp != NULL && temp->data != key) {
-        prev = temp;
-        temp = temp->next;
-    }
+    	while (temp != NULL && temp->data != key)
+	{
+        	prev = temp;
+        	temp = temp->next;
+    	}
 
-    if (temp == NULL) {
-        printf("Key not found in the list.\n");
-        return;
-    }
+    	if (temp == NULL)
+	{
+        	printf("Key not found in the list.\n");
+        	return;
+    	}
 
-    prev->next = temp->next;
-    free(temp);
+    	prev->next = temp->next;
+    	free(temp);
 }
 ```
 
    e. **Display the linked list:**
 ```c
-void displayList(struct Node* head) {
-    struct Node* current = head;
-    while (current != NULL) {
-        printf("%d -> ", current->data);
-        current = current->next;
-    }
-    printf("NULL\n");
+void displayList(struct Node* head)
+{
+	struct Node* current = head;
+	while (current != NULL)
+	{
+        	printf("%d -> ", current->data);
+        	current = current->next;
+    	}
+    	printf("NULL\n");
 }
 ```
 
 3. Test your functions in the main function:
 
 ```c
-int main() {
-    struct Node* head = NULL;
+int main(void)
+{
+	struct Node* head = NULL;
 
-    insertAtEnd(&head, 10);
-    insertAtEnd(&head, 20);
-    insertAtEnd(&head, 30);
+    	insertAtEnd(&head, 10);
+    	insertAtEnd(&head, 20);
+    	insertAtEnd(&head, 30);
 
-    insertAtBeginning(&head, 5);
+    	insertAtBeginning(&head, 5);
 
-    displayList(head);
+    	displayList(head);
 
-    deleteNode(&head, 20);
+    	deleteNode(&head, 20);
 
-    displayList(head);
+    	displayList(head);
 
-    return 0;
+    	return 0;
 }
 ```
 
 Remember to include the necessary header files like `stdio.h` and `stdlib.h` for using `printf`, `scanf`, and `malloc`.
 
-This is just a basic implementation of a singly linked list. There are many other operations and optimizations you can do with linked lists, but this should give you a starting point as a newcomer to C programming and data structures. Happy learning!
+This is just a basic implementation of a singly linked list. There are many other operations and optimizations you can do with linked lists.
