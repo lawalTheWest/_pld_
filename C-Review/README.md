@@ -110,5 +110,3 @@ This is a 10-day schedule for reviewing the C programming language. It covers va
     - Reflect on your progress throughout the week and identify areas of improvement.
     - Self-assess your understanding of the key concepts covered during the C language review.
     - Make notes of any additional topics or questions you have for further exploration.
-
-This comprehensive schedule covers a wide range of C programming concepts and provides you with both theoretical knowledge and practical coding experience. Good luck with your C language review!
